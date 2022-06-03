@@ -1,2 +1,2 @@
-# projetos-dio-tqi-fullstack
+# Full Stack Developer
 Projetos e anotações do bootcamp TQI FullStack Developer da DIO 
