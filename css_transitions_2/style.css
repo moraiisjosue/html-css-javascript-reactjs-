@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: rgb(221, 161, 171);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox .trace { /*criação dos traços*/
+    width: 90px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out; /*curvas de animação,começa e termina lento*/
+}
+
+.checkbox .trace:nth-child(1) {/*deixar um em baixo do outro sem rotação*/
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none; /*deixa sem o checkbos, fica somente os traços*/  
+}
+
+#toggle:checked + .checkbox .trace:nth-child(1) { /*rotação do 1º traço em 45 graus*/
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2) { /*rotação do 2º para ficar invisivel*/
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3) { /*rotação do 1º traço em -45 graus para formar um X com o trace 1*/
+    transform: rotate(-45deg);
+    top: 48px;
+}
