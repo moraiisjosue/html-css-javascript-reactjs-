@@ -24,7 +24,7 @@ buttonDec.addEventListener("click", decrement);
 
 function increment() {
     if(count >= 10){  //verifica se o contador passou ou é igual 10, se sim bloqueio o botão
-        button.disabled = true;
+        buttonInc.disabled = true;
     } else {
         count++
         currentNumber.innerHTML = count; //soma mais um
