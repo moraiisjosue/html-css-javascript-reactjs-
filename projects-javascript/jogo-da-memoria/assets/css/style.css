@@ -1,0 +1,58 @@
+* {
+    padding: 0; /*tira os espaçamentos e as margens*/
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    height: 100vh;
+    display: flex; 
+    background-color: rgba(17, 156, 156, 0.37);
+}
+.memory-game {
+    height: 640px; /*tamanho da tela do jogo*/
+    width: 640px;
+    margin: auto; /*centraliza*/
+    display: flex; /*elementos flutuantes e caso exceda o tamanho o wrap joga para a linha de baixo*/
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc( 33.333% - 10px); /*tamanho de cada card*/
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative; /*deixa os cards posicionaodos em fluxo normal, seguido */
+    box-shadow: 1px 1px 1px rgba(161, 61, 61, 0.3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d; /*não deixa o elemento achatado no plano*/
+    transition: transform .9s;
+}
+
+.card:active { /*efeito de diminuir de tamanho quando clica no card*/
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%; 
+    height: 100%;
+    padding: 20px;
+    position: absolute; /*deixa em posição absoluta, um em cima do outro*/
+    border-radius: 5px;
+    background-color: #ffffff;
+    backface-visibility: hidden; /*propriedade que tira o verso do elemento*/
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}  
+
+/*flip card animation*/
+
+.card.flip {
+    transform: rotateY(180deg);
+} 
+
